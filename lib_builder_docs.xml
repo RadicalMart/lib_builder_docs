@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.*" type="library" method="upgrade">
     <name>lib_builder_docs</name>
-    <libraryname>lib_abstract_design</libraryname>
+    <libraryname>lib_builder_docs</libraryname>
     <author>https://radicalmart.ru</author>
     <creationDate>2022</creationDate>
     <copyright>free</copyright>
     <license>free</license>
     <authorEmail>cymbal@delo-design.ru</authorEmail>
     <authorUrl>https://delo-design.ru</authorUrl>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <description>Library for builder docs</description>
 
     <files>
