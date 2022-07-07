@@ -1,0 +1,19 @@
+{
+	"name": "RadicalMart/lib_builder_docs",
+	"description": "Библиотека билдера документов",
+	"type": "library",
+	"authors": [
+		{
+			"name": "Dmitrii Cymbal",
+			"email": "cymbal@delo-design.ru"
+		}
+	],
+	"require": {
+		"php": ">=7.3.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"AD\\": "AD/"
+		}
+	}
+}

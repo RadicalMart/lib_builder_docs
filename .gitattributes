@@ -1,0 +1,4 @@
+/.gitignore export-ignore
+/.gitattributes export-ignore
+/tests export-ignore
+/lib_abstract_design.xml export-ignore
