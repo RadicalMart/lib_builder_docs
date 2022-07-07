@@ -8,7 +8,7 @@
     <license>free</license>
     <authorEmail>cymbal@delo-design.ru</authorEmail>
     <authorUrl>https://delo-design.ru</authorUrl>
-    <version>1.0.0</version>
+    <version>1.0.4</version>
     <description>Library for builder docs</description>
 
     <files>
