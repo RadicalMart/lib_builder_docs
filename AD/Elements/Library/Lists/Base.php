@@ -19,6 +19,11 @@ class Base extends BaseElement
 	{
 		$iterator        = $this->getIterator('split');
 		$iterator_parent = implode('.', $iterator->iterator);
+		if(!isset($this->items_hash_table[$iterator_parent])){
+			$this->items_hash_table[$iterator_parent] = [
+				'count' => 0,
+			];
+		}
 		$count           = (int) $this->items_hash_table[$iterator_parent]['count'] + 1;
 		$iterator_new    = $iterator_parent . '.' . $count;
 

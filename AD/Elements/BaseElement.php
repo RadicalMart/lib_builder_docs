@@ -9,6 +9,10 @@ use Closure;
 class BaseElement implements Element
 {
 
+	/**
+	 * @var array
+	 * @since version
+	 */
 	protected $for_render_element = [
 		'tag'   => '',
 		'style' => [
@@ -45,7 +49,7 @@ class BaseElement implements Element
 	public function __call($name, $arguments)
 	{
 
-		if (strpos($name, 'setStyle') !== false && count($arguments[0]) > 0)
+		if (strpos($name, 'setStyle') !== false && !empty($arguments[0]))
 		{
 			$name = str_replace('setStyle', '', $name);
 
@@ -54,16 +58,23 @@ class BaseElement implements Element
 				return $this;
 			}
 
-			$name_build = strtolower($name[0]);
+			$name_split = str_split($name);
+			$name_length = count($name_split);
 
-			for ($i = 1; $i < strlen($name); $i++)
+			if($name_length <= 0){
+				return $this;
+			}
+
+			$name_build = strtolower($name_split[0]);
+
+			for ($i = 1; $i < $name_length; $i++)
 			{
-				if (ctype_upper($name{$i}))
+				if (ctype_upper($name_split[$i]))
 				{
 					$name_build .= '-';
 				}
 
-				$name_build .= strtolower($name{$i});
+				$name_build .= strtolower($name_split[$i]);
 			}
 
 			$this->for_render_element['style'][$name_build] = $arguments[0];
@@ -285,7 +296,6 @@ class BaseElement implements Element
 		$displayData = array_merge([
 			'content' => $content,
 			'child'   => $layout_child_output,
-			'align'   => $this->align,
 			'attrs'   => $this->attributes
 		], $for_render_element);
 
